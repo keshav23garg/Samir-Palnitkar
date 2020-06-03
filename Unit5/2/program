@@ -1,0 +1,98 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0000000000f44d70 .scope module, "stimulus" "stimulus" 2 2;
+ .timescale -9 -12;
+v0000000000f400a0_0 .var "x", 0 0;
+v0000000000f40640_0 .var "y", 0 0;
+v0000000000f3fe20_0 .net "z", 0 0, L_0000000000f37000;  1 drivers
+S_0000000000f44f00 .scope module, "xor1" "my_xor" 2 5, 3 10 0, S_0000000000f44d70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "z";
+    .port_info 1 /INPUT 1 "x";
+    .port_info 2 /INPUT 1 "y";
+v0000000000f3f7e0_0 .net "a", 0 0, L_0000000000f35c60;  1 drivers
+v0000000000f3ff60_0 .net "b", 0 0, L_0000000000f12cc0;  1 drivers
+v0000000000f40000_0 .net "c", 0 0, L_0000000000f12dc0;  1 drivers
+v0000000000f3fba0_0 .net "d", 0 0, L_0000000000f36f00;  1 drivers
+v0000000000f40500_0 .net "x", 0 0, v0000000000f400a0_0;  1 drivers
+v0000000000f40280_0 .net "y", 0 0, v0000000000f40640_0;  1 drivers
+v0000000000f3f9c0_0 .net "z", 0 0, L_0000000000f37000;  alias, 1 drivers
+S_000000000107e090 .scope module, "and_1" "my_and" 3 14, 3 4 0, S_0000000000f44f00;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "a";
+    .port_info 1 /INPUT 1 "x";
+    .port_info 2 /INPUT 1 "y";
+L_0000000000f12dc0 .functor AND 1, v0000000000f400a0_0, L_0000000000f12cc0, C4<1>, C4<1>;
+v0000000000f45090_0 .net "a", 0 0, L_0000000000f12dc0;  alias, 1 drivers
+v0000000000f35bc0_0 .net "x", 0 0, v0000000000f400a0_0;  alias, 1 drivers
+v000000000107e220_0 .net "y", 0 0, L_0000000000f12cc0;  alias, 1 drivers
+S_000000000107e2c0 .scope module, "and_2" "my_and" 3 15, 3 4 0, S_0000000000f44f00;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "a";
+    .port_info 1 /INPUT 1 "x";
+    .port_info 2 /INPUT 1 "y";
+L_0000000000f36f00 .functor AND 1, L_0000000000f35c60, v0000000000f40640_0, C4<1>, C4<1>;
+v0000000001076c90_0 .net "a", 0 0, L_0000000000f36f00;  alias, 1 drivers
+v0000000001076d30_0 .net "x", 0 0, L_0000000000f35c60;  alias, 1 drivers
+v0000000001076dd0_0 .net "y", 0 0, v0000000000f40640_0;  alias, 1 drivers
+S_0000000001076e70 .scope module, "not_a" "my_not" 3 12, 3 7 0, S_0000000000f44f00;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "a";
+    .port_info 1 /INPUT 1 "x";
+L_0000000000f35c60 .functor NOT 1, v0000000000f400a0_0, C4<0>, C4<0>, C4<0>;
+v0000000001077000_0 .net "a", 0 0, L_0000000000f35c60;  alias, 1 drivers
+v0000000000f129f0_0 .net "x", 0 0, v0000000000f400a0_0;  alias, 1 drivers
+S_0000000000f12a90 .scope module, "not_b" "my_not" 3 13, 3 7 0, S_0000000000f44f00;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "a";
+    .port_info 1 /INPUT 1 "x";
+L_0000000000f12cc0 .functor NOT 1, v0000000000f40640_0, C4<0>, C4<0>, C4<0>;
+v0000000000f12c20_0 .net "a", 0 0, L_0000000000f12cc0;  alias, 1 drivers
+v0000000000f401e0_0 .net "x", 0 0, v0000000000f40640_0;  alias, 1 drivers
+S_0000000000f36ce0 .scope module, "or_1" "my_or" 3 16, 3 1 0, S_0000000000f44f00;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "a";
+    .port_info 1 /INPUT 1 "x";
+    .port_info 2 /INPUT 1 "y";
+L_0000000000f37000 .functor OR 1, L_0000000000f12dc0, L_0000000000f36f00, C4<0>, C4<0>;
+v0000000000f3fec0_0 .net "a", 0 0, L_0000000000f37000;  alias, 1 drivers
+v0000000000f3f920_0 .net "x", 0 0, L_0000000000f12dc0;  alias, 1 drivers
+v0000000000f406e0_0 .net "y", 0 0, L_0000000000f36f00;  alias, 1 drivers
+    .scope S_0000000000f44d70;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "output.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000000000f44d70 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f400a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f40640_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f400a0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f40640_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f400a0_0, 0, 1;
+    %delay 20000, 0;
+    %end;
+    .thread T_0;
+    .scope S_0000000000f44d70;
+T_1 ;
+    %vpi_call 2 18 "$monitor", "time=%3d  input1=%d , input2=%d , xor=%d", $time, v0000000000f400a0_0, v0000000000f40640_0, v0000000000f3fe20_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "2_stimulus.v";
+    "2.v";

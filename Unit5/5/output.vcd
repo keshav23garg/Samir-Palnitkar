@@ -1,0 +1,48 @@
+$date
+	Wed Jun 03 15:09:17 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module stimulus $end
+$var wire 1 ! out $end
+$var reg 1 " i0 $end
+$var reg 1 # i1 $end
+$var reg 1 $ switch $end
+$scope module mux1 $end
+$var wire 1 " i0 $end
+$var wire 1 # i1 $end
+$var wire 1 $ s $end
+$var wire 1 ! z $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+0"
+x!
+$end
+#4000
+0!
+#20000
+1"
+#22000
+1!
+#40000
+1$
+#44000
+x!
+#46000
+0!
+#60000
+1#
+#62000
+1!
+#80000
+0$
+#100000

@@ -1,0 +1,78 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00000000001cb8a0 .scope module, "stimulus" "stimulus" 2 4;
+ .timescale -9 -12;
+v00000000001cccd0_0 .var "c_in", 0 0;
+v00000000001ccd70_0 .net "c_out", 0 0, L_0000000000873450;  1 drivers
+v00000000001cce10_0 .net "sum", 0 0, L_0000000000873300;  1 drivers
+v00000000001cceb0_0 .var "x", 0 0;
+v00000000008722d0_0 .var "y", 0 0;
+S_00000000001ce180 .scope module, "uut" "full_adder" 2 11, 3 1 0, S_00000000001cb8a0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "sum";
+    .port_info 1 /OUTPUT 1 "c_out";
+    .port_info 2 /INPUT 1 "x";
+    .port_info 3 /INPUT 1 "y";
+    .port_info 4 /INPUT 1 "c_in";
+L_0000000000873290 .functor XOR 1, v00000000001cceb0_0, v00000000008722d0_0, C4<0>, C4<0>;
+L_0000000000873300 .functor XOR 1, L_0000000000873290, v00000000001cccd0_0, C4<0>, C4<0>;
+L_0000000000873370 .functor AND 1, L_0000000000873290, v00000000001cccd0_0, C4<1>, C4<1>;
+L_00000000008733e0 .functor AND 1, v00000000001cceb0_0, v00000000008722d0_0, C4<1>, C4<1>;
+L_0000000000873450 .functor OR 1, L_0000000000873370, L_00000000008733e0, C4<0>, C4<0>;
+v00000000001ce310_0 .net "c_in", 0 0, v00000000001cccd0_0;  1 drivers
+v00000000001ce3b0_0 .net "c_out", 0 0, L_0000000000873450;  alias, 1 drivers
+v00000000001ce450_0 .net "sum", 0 0, L_0000000000873300;  alias, 1 drivers
+v00000000001ce4f0_0 .net "w1", 0 0, L_0000000000873290;  1 drivers
+v00000000001cca50_0 .net "w2", 0 0, L_0000000000873370;  1 drivers
+v00000000001ccaf0_0 .net "w3", 0 0, L_00000000008733e0;  1 drivers
+v00000000001ccb90_0 .net "x", 0 0, v00000000001cceb0_0;  1 drivers
+v00000000001ccc30_0 .net "y", 0 0, v00000000008722d0_0;  1 drivers
+    .scope S_00000000001cb8a0;
+T_0 ;
+    %vpi_call 2 14 "$dumpfile", "output.vcd" {0 0 0};
+    %vpi_call 2 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000000001cb8a0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000001cceb0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000008722d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000001cccd0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000001cceb0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000008722d0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000001cccd0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000008722d0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000008722d0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000001cceb0_0, 0, 1;
+    %delay 20000, 0;
+    %end;
+    .thread T_0;
+    .scope S_00000000001cb8a0;
+T_1 ;
+    %vpi_call 2 31 "$monitor", "t=%3d x=%d,y=%d,c_in=%d,sum=%d,c_out=%d \012", $time, v00000000001cceb0_0, v00000000008722d0_0, v00000000001cccd0_0, v00000000001cce10_0, v00000000001ccd70_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "3_stimulus.v";
+    "3.v";

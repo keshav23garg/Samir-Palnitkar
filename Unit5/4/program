@@ -1,0 +1,69 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_000000000018d3b0 .scope module, "stimulus" "stimulus" 2 2;
+ .timescale -9 -12;
+v000000000018aaa0_0 .net "q", 0 0, L_000000000018cf20;  1 drivers
+v000000000018ab40_0 .net "qbar", 0 0, L_000000000018ad20;  1 drivers
+v000000000018abe0_0 .var "reset", 0 0;
+v000000000018ac80_0 .var "set", 0 0;
+S_000000000018d540 .scope module, "latch" "rs_latch" 2 5, 3 2 0, S_000000000018d3b0;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "q";
+    .port_info 1 /OUTPUT 1 "qbar";
+    .port_info 2 /INPUT 1 "set";
+    .port_info 3 /INPUT 1 "reset";
+L_000000000018cf20/d .functor NOR 1, v000000000018abe0_0, L_000000000018ad20, C4<0>, C4<0>;
+L_000000000018cf20 .delay 1 (1000,1000,1000) L_000000000018cf20/d;
+L_000000000018ad20/d .functor NOR 1, v000000000018ac80_0, L_000000000018cf20, C4<0>, C4<0>;
+L_000000000018ad20 .delay 1 (1000,1000,1000) L_000000000018ad20/d;
+v0000000001066ee0_0 .net "q", 0 0, L_000000000018cf20;  alias, 1 drivers
+v000000000018d6d0_0 .net "qbar", 0 0, L_000000000018ad20;  alias, 1 drivers
+v000000000018cde0_0 .net "reset", 0 0, v000000000018abe0_0;  1 drivers
+v000000000018ce80_0 .net "set", 0 0, v000000000018ac80_0;  1 drivers
+    .scope S_000000000018d3b0;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "output.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_000000000018d3b0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000018ac80_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000018abe0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000018ac80_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000018abe0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000018ac80_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000018abe0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000018ac80_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000018abe0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000018ac80_0, 0, 1;
+    %delay 20000, 0;
+    %end;
+    .thread T_0;
+    .scope S_000000000018d3b0;
+T_1 ;
+    %vpi_call 2 22 "$monitor", "time=%3d set=%d , reset=%d , q=%d , qbar=%d ", $time, v000000000018ac80_0, v000000000018abe0_0, v000000000018aaa0_0, v000000000018ab40_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "4_stimulus.v";
+    "4.v";
