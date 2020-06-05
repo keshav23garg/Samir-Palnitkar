@@ -1,0 +1,50 @@
+$date
+	Fri Jun 05 13:16:42 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module stimulus $end
+$var wire 1 ! a_small_b $end
+$var wire 1 " a_eq_b $end
+$var wire 1 # a_big_b $end
+$var reg 4 $ a [3:0] $end
+$var reg 4 % b [3:0] $end
+$scope module comp1 $end
+$var wire 4 & a [3:0] $end
+$var wire 1 # a_big_b $end
+$var wire 1 " a_eq_b $end
+$var wire 1 ! a_small_b $end
+$var wire 4 ' b [3:0] $end
+$var wire 4 ( x [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1111 (
+b0 '
+b0 &
+b0 %
+b0 $
+0#
+1"
+0!
+$end
+#20000
+1#
+0"
+b0 (
+b1111 $
+b1111 &
+#40000
+1!
+0#
+b0 $
+b0 &
+b1111 %
+b1111 '
+#60000
