@@ -1,0 +1,66 @@
+$date
+	Mon Jun 08 21:10:56 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module stimulus $end
+$var wire 5 ! out [4:0] $end
+$var reg 4 " a [3:0] $end
+$var reg 4 # b [3:0] $end
+$var reg 3 $ select [2:0] $end
+$scope module uut $end
+$var wire 4 % a [3:0] $end
+$var wire 4 & b [3:0] $end
+$var wire 3 ' select [2:0] $end
+$var reg 5 ( out [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1010 (
+b0 '
+b1000 &
+b1010 %
+b0 $
+b1000 #
+b1010 "
+b1010 !
+$end
+#20000
+b10010 !
+b10010 (
+b1 $
+b1 '
+#40000
+b10 !
+b10 (
+b10 $
+b10 '
+#60000
+b1 !
+b1 (
+b11 $
+b11 '
+#80000
+b10 !
+b10 (
+b100 $
+b100 '
+#100000
+b10100 !
+b10100 (
+b101 $
+b101 '
+#120000
+b110 $
+b110 '
+#140000
+b1 !
+b1 (
+b111 $
+b111 '

@@ -1,0 +1,57 @@
+$date
+	Mon Jun 08 21:54:46 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module stimulus $end
+$var reg 1 ! clk $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+$end
+#6000
+1!
+#10000
+0!
+#16000
+1!
+#20000
+0!
+#26000
+1!
+#30000
+0!
+#36000
+1!
+#40000
+0!
+#46000
+1!
+#50000
+0!
+#56000
+1!
+#60000
+0!
+#66000
+1!
+#70000
+0!
+#76000
+1!
+#80000
+0!
+#86000
+1!
+#90000
+0!
+#96000
+1!
+#100000
+0!
