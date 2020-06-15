@@ -9,3 +9,5 @@ Software used
 Icarus verilog (verilog compiler)
 GTKwave (to view waveforms)
 Notepad++ (for writing codes)
+
+NOTE : i have left out some question because they were more theoratical than code...and one specific question because it was unclear.
